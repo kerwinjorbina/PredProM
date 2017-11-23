@@ -1,0 +1,59 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Index Latest Payload Encoding</h4>
+                    </div>
+                    <div class="content">
+                        <p>
+                            A similar approach to <a href="/encode/simple">Simple Index Encoding</a> but with the addition of the data at the last event or the specified prefix.
+                        </p>
+                        <logdata></logdata>
+                        <p>
+                            As we only have resource as the additional attribute in this log, it is the only added column in the data set. This column is assigned with the value of the resource at the given event number.
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data (Whole Log)</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedData.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedData.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <p>
+                            The example below shows the encoding with a given prefix of 3 where the resource column is introduced as the latest data payload addition.
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data (With prefix=3)</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedDataWithPrefix.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedDataWithPrefix.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Complex Encoding</h4>
+                    </div>
+                    <div class="content">
+                        <p>
+                            A extension to the approach of <a href="/encode/payload">Index Latest Payload Encoding</a> but adds the data payload at each event of a given trace.
+                        </p>
+                        <logdata></logdata>
+                        <p>
+                            Notice that in the encoded data below, we have the event data attribute (resource) added after each event.
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data (Whole Log)</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedData.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedData.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <p>
+                            When a prefix is provided, the data shown only is 
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data (With prefix=3)</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedDataWithPrefix.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedDataWithPrefix.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

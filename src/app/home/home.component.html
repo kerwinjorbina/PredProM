@@ -1,0 +1,60 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="typo-line">
+                            <h4><p class="category">Log</p>{{ logName }}</h4>
+                        </div>
+                        <div class="typo-line">
+                            <h4><p class="category">Number of Traces</p>{{ logEventCount }}</h4>
+                        </div>
+                        <div class="typo-line">
+                            <h4><p class="category">Number of Events</p>{{ logEventCount }}</h4>
+                        </div>
+                        <div class="typo-line">
+                            <h4><p class="category">Number of Resources</p>{{ logResourceCount }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <lbd-chart
+                  [title]="'Top 5 Event Executions'"
+                  [subtitle]="'Frequency of the event in the log'"
+                  [chartClass]="'ct-perfect-fourth'"
+                  [chartType]="eventChartType"
+                  [chartData]="eventChartData"
+                  [legendItems]="eventChartLegendItems">
+                </lbd-chart>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <lbd-chart
+                  [title]="'Traces Per Day'"
+                  [subtitle]="'Frequency per day'"
+                  [chartType]="tracesChartType"
+                  [chartData]="tracesChartData"
+                  [chartOptions]="tracesChartOptions"
+                  [chartResponsive]="tracesChartResponsive"
+                  [legendItems]="tracesChartLegendItems">
+                </lbd-chart>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <lbd-chart
+                  [title]="'Resources Per Day'"
+                  [subtitle]="'Frequency per day'"
+                  [chartType]="resourcesChartType"
+                  [chartData]="resourcesChartData"
+                  [chartOptions]="resourcesChartOptions"
+                  [chartResponsive]="resourcesChartResponsive"
+                  [legendItems]="resourcesChartLegendItems">
+                </lbd-chart>
+            </div>
+        </div>
+    </div>
+</div>

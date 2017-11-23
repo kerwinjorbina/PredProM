@@ -1,0 +1,60 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Boolean Encoding</h4>
+                    </div>
+                    <div class="content">
+                        <p>
+                            To perform this encoding method, we take all the possible events in a given trace and convert them to the columns of our dataset.
+                            We assign a true or false value if the event occurs on a given trace. Let us see the example below:
+                        </p>
+                        <logdata></logdata>
+                        <p>
+                            We can see that there are 5 unique events name A, B, C, D and E. These will now be our columns in the encoded data. In addition, we used the remaining time as the metric of interest for the prediction. To calculate the remaining time, we take the difference in the time of the last event with respect to the event number. The boolean encoded data is shown in the table below:
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedData.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedData.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <p>
+                            Furthermore, this can be expanded to use the data payload (the other attributes in the event such as resources). We use the same concept in encoding where we add the resources as columns in the data. Please note that this is not implemented yet in the <a href="https://github.com/nirdizati/nirdizati-encoders">Nirdizati-Encoders</a> project.
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data With Payload</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedDataWithPayload.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedDataWithPayload.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

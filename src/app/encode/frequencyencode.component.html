@@ -1,0 +1,59 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Frequency Encoding</h4>
+                    </div>
+                    <div class="content">
+                        <p>
+                            This encoding method is almost similar to <a href="/encode/boolean">Boolean Encoding</a>. The only difference is that instead of assigning true or false values in the encoded data, we count the number of times the event occurred in the trace.
+                        </p>
+                        <logdata></logdata>
+                        <p>
+                            The frequency encoded data is shown below. Notice that on event number 3, the count for event A is 2.
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedData.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedData.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <p>
+                            Like boolean encoding, we can also add the data payload attributes to this method. Please note that this extension is not implemented yet in the <a href="https://github.com/nirdizati/nirdizati-encoders">Nirdizati-Encoders</a> project.
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data with Payload</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedDataWithPayload.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedDataWithPayload.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

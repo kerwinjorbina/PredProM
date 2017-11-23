@@ -1,0 +1,59 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Simple Index Encoding</h4>
+                    </div>
+                    <div class="content">
+                        <p>
+                            In Simple Index Encoding, we only take the control flow of the traces in the log. This means that we only consider the event name and disregard all other data attributes attached to it. For example, in the given data below, we will not consider the given resources. In any type of index encoding, whether it uses Simple, Latest Payload or Complex, an option is provided if you, as the data scientist, would like to work on specific prefixes (length of the trace to be considered) or the entire log.  If you would choose to encode the whole log, the algorithm will take the maximum number of events in all the traces. This will now be the number of columns you will have in your data set. In the event that the trace is shorted than the specified number of columns, we assign a 0 value to it. Otherwise, if a prefix is provided, we will only encode the trace at the given prefix. For example, if the user specified a prefix of 5, we only take the traces which has 5 events.
+                        </p>
+                        <logdata></logdata>
+                        <p>
+                            The example below shows the encoding of the entire log.
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data (Whole Log)</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedData.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedData.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <p>
+                            The example below shows the encoding with a given prefix of 3.
+                        </p>
+                        <div class="header">
+                            <h5 class="title">Encoded Data (With prefix=3)</h5>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of encodedDataWithPrefix.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of encodedDataWithPrefix.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
